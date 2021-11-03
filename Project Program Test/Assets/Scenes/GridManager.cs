@@ -5,4 +5,14 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
 
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
