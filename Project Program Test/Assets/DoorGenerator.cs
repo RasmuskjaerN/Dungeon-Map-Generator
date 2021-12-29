@@ -16,24 +16,24 @@ public class DoorGenerator : MonoBehaviour
                 foreach (Vector2Int dir in Dir2D.cardinalDirList)
                 {
                     Vector2Int neighbourPos = position + dir;
-                    if (roomPos.Contains(neighbourPos) != true){
-                        doorPos.Add(neighbourPos);
-                        
-                    } else if (corridorPos.Contains(neighbourPos))
+                    if (roomPos.Contains(neighbourPos) != true)
                     {
                         doorPos.Add(neighbourPos);
+                        Debug.Log(doorPos);
                     }
-                    
-                        
-                    
+                    else if (corridorPos.Contains(neighbourPos) !=true)
+                    {
+                        doorPos.Add(neighbourPos);
+                        Debug.Log(doorPos);
 
+                    }
                 }
-
             }
         }
 
 
         return doorPos;
+        
 
         /* HashSet<Vector2Int> doorPos = new HashSet<Vector2Int>();
          foreach (Vector2Int roomPos in corridorPos)
