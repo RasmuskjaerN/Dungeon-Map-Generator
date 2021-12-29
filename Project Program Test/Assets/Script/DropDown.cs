@@ -20,9 +20,9 @@ public class DropDown : MonoBehaviour
 
     public void Start()
     {
-        rfdg = GameObject.Find("RoomFirstDungeonGenerator").GetComponent<RoomFirstDungeonGenerator>();
+        rfdg = GameObject.Find("RoomsFirstDungeonGenerator").GetComponent<RoomFirstDungeonGenerator>();
         srwdg = GameObject.Find("SimpleRandomWalkDungeonGenerator").GetComponent<SimpleRandomWalkDungeonGenerator>();
-        cfdg = GameObject.Find("CorridorFirstDungeonGeneration").GetComponent<CorridorFirstDungeonGeneration>();
+        cfdg = GameObject.Find("CorridorFirstDungeonGenerator").GetComponent<CorridorFirstDungeonGeneration>();
         
     
     }
