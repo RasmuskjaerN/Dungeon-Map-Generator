@@ -198,12 +198,13 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     {
         var connection = true;
         var collision = true;
-        connection = FindTiles(Dir2D.cardinalDirList, floor);
+        
         var whichSide = Random.Range(0, 3);
         var x=0;
         var y=0;
         Vector2Int test = new Vector2Int(0,0);
-        if (whichSide == 0)
+        
+        if (whichSide == 0) //leftEdge
         {
             
            x=1;
@@ -214,7 +215,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
                 x += 1;
                 test.Set(x, y);
-               
+                connection = FindTiles(Dir2D.cardinalDirList, floor, test);
                 
                 if(connection == true)
                 {
@@ -223,20 +224,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
                 
             }   
         } 
-        else if (whichSide == 1)
+        else if (whichSide == 1) //leftEdge Right edge
         {
             x=dungeonWidth;
             y=Random.Range(1,dungeonHeight);
 
           
-        } 
-        else if (whichSide == 2)
+        }  
+        else if (whichSide == 2) //top edge
         {
             x=Random.Range(1,dungeonWidth);
             y=dungeonHeight;
             
         } 
-        else if (whichSide == 3)
+        else if (whichSide == 3) //buttom edge
         {
             x=Random.Range(1,dungeonWidth);
             y=1;
@@ -249,20 +250,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
             return currentPosition;
     
     }
-    public bool FindTiles(List<Vector2Int> dirList, HashSet<Vector2Int> floorPos)
+    public bool FindTiles(List<Vector2Int> dirList, HashSet<Vector2Int> floorPos, Vector2Int position)
     {   
-        var hello = false;
+        var hello = true;
         
-        foreach (var position  in floorPos)
-        {
+      
             foreach (var dir in dirList)
             {   
                 var neighbourPos = position + dir;
                 if (floorPos.Contains(neighbourPos) == true)
                     hello = true;
+                    Debug.Log("hello"+ hello);
             }
             
-        }    
+          
             
             return hello;
             
