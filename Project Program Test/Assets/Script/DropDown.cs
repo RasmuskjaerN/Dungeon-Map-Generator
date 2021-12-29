@@ -5,37 +5,64 @@ using TMPro;
 
 public class DropDown : MonoBehaviour
 {
-    public TextMeshProUGUI output;
+    public SimpleRandomWalkData bigDungeon;
+    public SimpleRandomWalkData island;
+    public SimpleRandomWalkData mediumDungeon;
+    public SimpleRandomWalkData onlyCorridors;
+    public SimpleRandomWalkData smallDungeon;
+    
+    public RoomFirstDungeonGenerator rfdg;
+    
+    public SimpleRandomWalkDungeonGenerator srwdg;
+    
+    public CorridorFirstDungeonGeneration cfdg;
 
-    public SimpleRandomWalkData BigDungeon;
-    public GameObject CorridorFirst;
+
+    public void Start()
+    {
+        rfdg = GameObject.Find("RoomFirstDungeonGenerator").GetComponent<RoomFirstDungeonGenerator>();
+        srwdg = GameObject.Find("SimpleRandomWalkDungeonGenerator").GetComponent<SimpleRandomWalkDungeonGenerator>();
+        cfdg = GameObject.Find("CorridorFirstDungeonGeneration").GetComponent<CorridorFirstDungeonGeneration>();
+        
+    
+    }
+    
     
     public void HandleInputData(int val)
     {
         if (val == 0)
         {
-            Debug.Log("Is this working");
-            
+            rfdg.randomWalkParameters = bigDungeon;
+            srwdg.randomWalkParameters = bigDungeon;
+            cfdg.randomWalkParameters = bigDungeon;
         }
 
         if (val == 1)
         {
-            
+            cfdg.randomWalkParameters = island;
+            srwdg.randomWalkParameters = island;
+            rfdg.randomWalkParameters = island;
         }
 
         if (val == 2)
         {
-            
+            cfdg.randomWalkParameters = mediumDungeon;
+            srwdg.randomWalkParameters = mediumDungeon;
+            rfdg.randomWalkParameters = mediumDungeon;
         }
 
         if (val == 3)
         {
-            
+            cfdg.randomWalkParameters = onlyCorridors;
+            srwdg.randomWalkParameters = onlyCorridors;
+            rfdg.randomWalkParameters = onlyCorridors;
         }
 
         if (val == 4)
         {
-            
+            cfdg.randomWalkParameters = smallDungeon;
+            srwdg.randomWalkParameters = smallDungeon;
+            rfdg.randomWalkParameters = smallDungeon;
         }
         
     }

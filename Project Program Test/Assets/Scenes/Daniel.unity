@@ -182,10 +182,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 88
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -193,9 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Big Dungeon
-
-'
+  m_Text: Generate Corridor First Dungeon
 --- !u!222 &12339560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -253,7 +251,7 @@ MonoBehaviour:
   corridorLenghth: 14
   corridorCount: 5
   roomPercent: 0.8
-  yourButton2: {fileID: 1885702589}
+  yourButton2: {fileID: 0}
 --- !u!1 &185866261
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 1694733624}
   startPos: {x: 0, y: 0}
-  randomWalkParameters: {fileID: 11400000, guid: e00223ebbe1fd8b4ea92d78e60461379, type: 2}
+  randomWalkParameters: {fileID: 0}
   corridorLenghth: 10
   corridorCount: 100
   roomPercent: 1
@@ -2240,7 +2238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 1694733624}
   startPos: {x: 0, y: 0}
-  randomWalkParameters: {fileID: 11400000, guid: 2d98b41834dcbd94f880ac0a7123ab63, type: 2}
+  randomWalkParameters: {fileID: 0}
 --- !u!4 &383848891
 Transform:
   m_ObjectHideFlags: 0
@@ -2545,7 +2543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 1694733624}
   startPos: {x: 0, y: 0}
-  randomWalkParameters: {fileID: 11400000, guid: e00223ebbe1fd8b4ea92d78e60461379, type: 2}
+  randomWalkParameters: {fileID: 0}
   mineCorridorLenghth: 14
   mineCount: 5
   minRoomWidth: 5
@@ -2804,7 +2802,7 @@ GameObject:
   - component: {fileID: 1051106339}
   - component: {fileID: 1051106338}
   m_Layer: 5
-  m_Name: SRWDG BigDungeon
+  m_Name: CorridorFirstDungeonGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2827,8 +2825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 808.27, y: 508}
-  m_SizeDelta: {x: 237.9327, y: 40}
+  m_AnchoredPosition: {x: 201.04, y: 159.55}
+  m_SizeDelta: {x: 237.933, y: 32.182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051106338
 MonoBehaviour:
@@ -2873,7 +2871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1051106339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 185866262}
+        m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
+        m_MethodName: GenerateDungeon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1051106339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2971,10 +2981,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 88
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2982,9 +2992,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Big Dungeon
-
-'
+  m_Text: Generate Room First Dungeon
 --- !u!222 &1230764501
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10588,7 +10596,7 @@ GameObject:
   - component: {fileID: 1305299345}
   - component: {fileID: 1305299344}
   m_Layer: 5
-  m_Name: RFG BigDungeon
+  m_Name: RoomsFirstGeneratorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10611,7 +10619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: 508}
+  m_AnchoredPosition: {x: 201.04, y: 223.91}
   m_SizeDelta: {x: 237.93, y: 32.1864}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305299344
@@ -10657,7 +10665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1305299345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568497557}
+        m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
+        m_MethodName: GenerateDungeon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1305299345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10878,9 +10898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d733aa342594f12af60dc25e743f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: {fileID: 0}
-  BigDungeon: {fileID: 11400000, guid: 01b1144eab756384bb770963d24ab122, type: 2}
-  CorridorFirst: {fileID: 120806811}
+  bigDungeon: {fileID: 11400000, guid: 01b1144eab756384bb770963d24ab122, type: 2}
+  island: {fileID: 11400000, guid: dffe3a10d3b822a4590e92842dbdb669, type: 2}
+  mediumDungeon: {fileID: 11400000, guid: e00223ebbe1fd8b4ea92d78e60461379, type: 2}
+  onlyCorridors: {fileID: 11400000, guid: baafcd34db9cb834c9b0c15c6103f291, type: 2}
+  smallDungeon: {fileID: 11400000, guid: 2d98b41834dcbd94f880ac0a7123ab63, type: 2}
 --- !u!1 &1694733623
 GameObject:
   m_ObjectHideFlags: 0
@@ -11173,7 +11195,7 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 1694733624}
   startPos: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: 01b1144eab756384bb770963d24ab122, type: 2}
-  yourButton3: {fileID: 1051106338}
+  yourButton3: {fileID: 0}
 --- !u!1 &1804285273
 GameObject:
   m_ObjectHideFlags: 0
@@ -11228,7 +11250,7 @@ MonoBehaviour:
   dungeonHeight: 20
   offset: 1
   randomWalkRooms: 0
-  yourButton: {fileID: 1305299344}
+  yourButton: {fileID: 0}
 --- !u!1 &1880008336
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,7 +11372,7 @@ GameObject:
   - component: {fileID: 1885702590}
   - component: {fileID: 1885702589}
   m_Layer: 5
-  m_Name: CFDG BigDungeon
+  m_Name: SimpleRandomWalkDungeonGeneratorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11373,8 +11395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 530, y: 508}
-  m_SizeDelta: {x: 237.9327, y: 40}
+  m_AnchoredPosition: {x: 198.96, y: 191.73}
+  m_SizeDelta: {x: 242.08, y: 32.183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885702589
 MonoBehaviour:
@@ -11419,7 +11441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1885702590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 383848890}
+        m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
+        m_MethodName: GenerateDungeon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1885702590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11496,7 +11530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331.03, y: 292}
+  m_AnchoredPosition: {x: 240.01, y: 119}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044726306
@@ -11552,6 +11586,10 @@ MonoBehaviour:
     - m_Text: Option A
       m_Image: {fileID: 0}
     - m_Text: Option B
+      m_Image: {fileID: 0}
+    - m_Text: Option C
+      m_Image: {fileID: 0}
+    - m_Text: Option C
       m_Image: {fileID: 0}
     - m_Text: Option C
       m_Image: {fileID: 0}
@@ -11802,10 +11840,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 88
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -11813,7 +11851,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Big Dungeon
+  m_Text: 'Generate Simple Random Dungeon
+
 
 '
 --- !u!222 &2087623439
