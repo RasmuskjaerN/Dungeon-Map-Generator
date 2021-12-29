@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TilemapVisualizer : MonoBehaviour
+public class GridMapVisualizer : MonoBehaviour
 {
     [SerializeField]
     private Tilemap floorTilemap/*,wallTilemap*/; //makes tilemaps selectable in unity
     [SerializeField]
     private TileBase floorTile /*,wallTop*/; //makes tiles selectable.
-
-    
 
     public void paintFloorTiles(IEnumerable<Vector2Int> floorPos) //IEnumberable is a Generic which makes the tiles loopable.
     {
