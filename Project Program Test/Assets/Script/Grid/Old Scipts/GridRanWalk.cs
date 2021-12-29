@@ -13,16 +13,18 @@ public class GridRanWalk : MonoBehaviour
     [SerializeField]
     public int walkLength = 10;
     [SerializeField]
-    public bool startRandomlyEachIteration = true;
+    public bool startRandomlyEachIteration = false;
+
+    [SerializeField] 
+    private TilemapVisualizer tilemapVisualizer;
 
 
     public void runProceduralGeneration()
     {
         HashSet<Vector2Int> floorPos = runRandomWalk();
-        foreach (var position in floorPos)
-        {
-          Debug.Log(position);  
-        }
+        tilemapVisualizer.Clear();
+        tilemapVisualizer.paintFloorTiles(floorPos);
+        
     }
     
     protected HashSet<Vector2Int> runRandomWalk() //Takes in parameters that are universal to run the Algorithm.

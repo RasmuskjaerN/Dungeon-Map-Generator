@@ -51,15 +51,15 @@ public class Grid<TGridObject> {
                 for (int y = 0; y < gridArray.GetLength(1); y++)
                 {
                     debugTextArray[x, y] = UtilsClass.CreateWorldText(gridArray[x, y]?.ToString(), null,
-                        getWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 30, Color.white,
+                        getWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 30, Color.grey,
                         TextAnchor.MiddleCenter);
-                    Debug.DrawLine(getWorldPosition(x, y), getWorldPosition(x, y + 1), Color.white, 100f);
-                    Debug.DrawLine(getWorldPosition(x, y), getWorldPosition(x + 1, y), Color.white, 100f);
+                    Debug.DrawLine(getWorldPosition(x, y), getWorldPosition(x, y + 1), Color.grey, 100f);
+                    Debug.DrawLine(getWorldPosition(x, y), getWorldPosition(x + 1, y), Color.grey, 100f);
                 }
             }
 
-            Debug.DrawLine(getWorldPosition(0, height), getWorldPosition(width, height), Color.white, 100f);
-            Debug.DrawLine(getWorldPosition(width, 0), getWorldPosition(width, height), Color.white, 100f);
+            Debug.DrawLine(getWorldPosition(0, height), getWorldPosition(width, height), Color.grey, 100f);
+            Debug.DrawLine(getWorldPosition(width, 0), getWorldPosition(width, height), Color.grey, 100f);
 
             OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) =>
             {
