@@ -10,6 +10,8 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private TileBase floorTile /*,wallTop*/; //makes tiles selectable.
 
+    
+
     public void paintFloorTiles(IEnumerable<Vector2Int> floorPos) //IEnumberable is a Generic which makes the tiles loopable.
     {
         PaintTiles(floorPos, floorTilemap, floorTile);
