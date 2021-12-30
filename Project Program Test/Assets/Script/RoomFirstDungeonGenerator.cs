@@ -21,7 +21,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     {
        
         CreateRooms();
-        GenerateMine();
+       
         
     }
 
@@ -167,6 +167,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         }
         return floor;
     }
+
+
+    ////////////////////////////////////////Code that "should" work but doesnt :) ///////////////////////////////////////////////////////////
       public void GenerateMine()
     {
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
@@ -186,7 +189,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         potentialRoomPos.Add(currentPosition);
         for (int i = 0; i < mineCount; i++)
         {
-            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCount);
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCorridorLenghth);
             currentPosition = corridor[corridor.Count - 1];
             potentialRoomPos.Add(currentPosition);
             floorPositions.UnionWith(corridor);
@@ -197,34 +200,38 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     public Vector2Int FindRandomEdge (HashSet<Vector2Int> floor)
     {
         var connection = true;
-        var collision = true;
+        var noCollision = true;
         
         var whichSide = Random.Range(0, 3);
+        whichSide = 0; //for testing
         var x=0;
         var y=0;
-        Vector2Int test = new Vector2Int(0,0);
+        Vector2Int test = new Vector2Int(x,y);
         
+        
+
         if (whichSide == 0) //leftEdge
         {
             
            x=1;
            y= Random.Range(1,dungeonHeight);
          
-            while(collision== true)
+            while(noCollision== true && x<100)
             {
-
-                x += 1;
                 test.Set(x, y);
                 connection = FindTiles(Dir2D.cardinalDirList, floor, test);
+                x += 1;
+               
                 
+                
+                Debug.Log("test"+test);
                 if(connection == true)
                 {
-                    collision=false;
+                    noCollision=false;
                 }
-                
             }   
         } 
-        else if (whichSide == 1) //leftEdge Right edge
+        else if (whichSide == 1) // Right edge
         {
             x=dungeonWidth;
             y=Random.Range(1,dungeonHeight);
@@ -252,26 +259,27 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     }
     public bool FindTiles(List<Vector2Int> dirList, HashSet<Vector2Int> floorPos, Vector2Int position)
     {   
-        var hello = true;
+        var detection = false;
         
       
             foreach (var dir in dirList)
             {   
                 var neighbourPos = position + dir;
                 if (floorPos.Contains(neighbourPos) == true)
-                    hello = true;
-                    Debug.Log("hello"+ hello);
-            }
+                {
+                    detection = true;
+
+                }
+                Debug.Log("neighbourPos"+neighbourPos);
+                    Debug.Log("detection="+ detection);
+                    Debug.Log("dir="+ dir);
+                    Debug.Log("positionnn"+ position);
+            }   
             
-          
+    
             
-            return hello;
-            
+            return detection;
+
     }    
-
-
-
-
-
 
 }
