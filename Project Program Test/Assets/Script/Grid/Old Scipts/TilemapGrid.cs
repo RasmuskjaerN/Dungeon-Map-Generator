@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class TilemapGrid
-{
+public class TilemapGrid
+{/*
     private Grid<TilemapObject> grid;
 
     public TilemapGrid(int width, int height, float cellSize, Vector3 originPosition)
     {
-        grid = new Grid<TilemapObject>(width, height, cellSize, originPosition, (Grid<TilemapObject>g,int x,int y) => new TilemapObject(grid, x, y));
+        grid = new Grid<TilemapObject>(width, height, cellSize, originPosition/*, (Grid<TilemapObject>g,int x,int y) => new TilemapObject(grid, x, y));
         
     }
     
@@ -43,6 +43,6 @@ using UnityEngine;
         {
             return tilemapSprite.ToString();
         }
-    }
+    }*/
     
-}*/
+}
