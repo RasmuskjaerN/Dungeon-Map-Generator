@@ -8,7 +8,7 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private Tilemap floorTilemap/*,wallTilemap*/; //makes tilemaps selectable in unity
     [SerializeField]
-    private TileBase floorTile /*,wallTop*/; //makes tiles selectable.
+    private TileBase floorTile/*,doorTile*//*,roomTile*//*,corridorTile*/ /*,wallTop*/; //makes tiles selectable.
 
     
 
@@ -37,7 +37,7 @@ public class TilemapVisualizer : MonoBehaviour
         var tilePos = tilemap.WorldToCell((Vector3Int) position); // Take the position of the tile. World position is the position in the program
         
         // and make it comparable to the position of the tile.
-        tilemap.cellSize.Set(5,5,0);
+        //tilemap.cellSize.Set(5,5,0);
         tilemap.SetTile(tilePos, tile);
         
     }
@@ -45,7 +45,20 @@ public class TilemapVisualizer : MonoBehaviour
     {
         paintSingleTile(wallTilemap,wallTop,position);
     }*/
+    /*public void PaintSingleDoorTile(Vector2Int position)
+     
+    {
+        paintSingleTile(floorTilemap,DoorTile,doorPos);
+    }*/
+    /*public void PaintSingleDoorTile(Vector2Int position)
+     
+    {
+        paintSingleTile(floorTilemap,corridorTile, roomPos);
+    }*/
 
+    //I think its possible to use 1 tilemap and have the positions to define what kind of tile it is.
+    //Consider if statements to check what type of tile to use.
+    
     public void Clear() // makes sure it generates a new generated map.
     {
         floorTilemap.ClearAllTiles();
