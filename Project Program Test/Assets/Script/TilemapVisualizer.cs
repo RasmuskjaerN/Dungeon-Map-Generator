@@ -35,8 +35,11 @@ public class TilemapVisualizer : MonoBehaviour
     private void paintSingleTile(Tilemap tilemap, TileBase tile, Vector2Int position) //Assign the Texture the the referenced tile. 
     {
         var tilePos = tilemap.WorldToCell((Vector3Int) position); // Take the position of the tile. World position is the position in the program
+        
         // and make it comparable to the position of the tile.
+        tilemap.cellSize.Set(5,5,0);
         tilemap.SetTile(tilePos, tile);
+        
     }
     /*public void PaintSingleBasicWall(Vector2Int position)
     {
