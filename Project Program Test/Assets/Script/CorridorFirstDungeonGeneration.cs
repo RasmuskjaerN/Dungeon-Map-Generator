@@ -5,7 +5,9 @@ using UnityEngine;
 using System;
 
 public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
-{
+{   
+    [SerializeField]
+    private int mineCorridorLenghth = 14, mineCount = 5;
     [SerializeField]
     private int corridorLenghth = 14, corridorCount = 5;//Determining the Lenght of each corridor and the total amount of corridors
     [SerializeField]
@@ -92,9 +94,37 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
         {
             var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, corridorLenghth);
             currentPosition = corridor[corridor.Count - 1];
+            potentialRoomPos.Add(currentPosition); 
+            floorPositions.UnionWith(corridor); //Need to seperate corridors from floors for the findDoor corridor
+        }
+    }
+
+       public void GenerateMine()
+    {
+        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
+        CreateMine(floorPositions, potentialRoomPos);
+
+        tilemapVisualizer.paintFloorTiles(floorPositions);
+    }
+
+    public void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
+
+    {
+        
+        Vector2Int currentPosition = new Vector2Int(0,0);
+       
+
+        potentialRoomPos.Add(currentPosition);
+        for (int i = 0; i < mineCount; i++)
+        {
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCorridorLenghth);
+            currentPosition = corridor[corridor.Count - 1];
             potentialRoomPos.Add(currentPosition);
             floorPositions.UnionWith(corridor);
         }
+
+
     }
 
     
