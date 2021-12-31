@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class NewGridRandomWalk : AbstractDungeonGenerator
+/*public class NewGridRandomWalk : AbstractDungeonGenerator
 {
     [SerializeField]
     public SimpleRandomWalkData randomWalkParameters; //Uses The parameters from the saved parameters files.
@@ -38,5 +38,5 @@ public class NewGridRandomWalk : AbstractDungeonGenerator
 
         return floorPos;
     }
-}
+}*/
 

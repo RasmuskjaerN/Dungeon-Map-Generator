@@ -8,10 +8,10 @@ public abstract class AbstractDungeonGenerator : MonoBehaviour //We make abstrac
     protected TilemapVisualizer tilemapVisualizer = null; //makes sure all generations have a tilemapVisualizer
     [SerializeField]
     protected Vector2Int startPos = Vector2Int.zero; //every generation has a start position
-    [SerializeField] protected int dungeonWidth=20;
+    /*[SerializeField] protected int dungeonWidth=20;
     [SerializeField] protected int dungeonHeight=10;
     [SerializeField] protected float cellSize=5f;
-
+*/
 
     public void GenerateDungeon()
     {

@@ -8,13 +8,18 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private Tilemap floorTilemap/*,wallTilemap*/; //makes tilemaps selectable in unity
     [SerializeField]
-    private TileBase floorTile/*,doorTile*//*,roomTile*//*,corridorTile*/ /*,wallTop*/; //makes tiles selectable.
+    private TileBase floorTile,doorTile,roomTile,corridorTile /*,wallTop*/; //makes tiles selectable.
 
     
 
-    public void paintFloorTiles(IEnumerable<Vector2Int> floorPos) //IEnumberable is a Generic which makes the tiles loopable.
+    public void paintRoomTiles(IEnumerable<Vector2Int> roomPos) //IEnumberable is a Generic which makes the tiles loopable.
     {
-        PaintTiles(floorPos, floorTilemap, floorTile);
+        PaintTiles(roomPos, floorTilemap, roomTile);
+    }
+    
+    public void paintCorridorTiles(IEnumerable<Vector2Int> corridorPos) //IEnumberable is a Generic which makes the tiles loopable.
+    {
+        PaintTiles(corridorPos, floorTilemap, corridorTile);
     }
 
     private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile) //Take in Tiles and its properties.
@@ -41,6 +46,19 @@ public class TilemapVisualizer : MonoBehaviour
         tilemap.SetTile(tilePos, tile);
         
     }
+    
+    /*
+     corridorsTile
+     doorsTile
+     floor
+     */
+    public void PaintSingleDoorTile(Vector2Int position)
+     
+    {
+        paintSingleTile(floorTilemap,doorTile,position);
+    }
+    
+    
     /*public void PaintSingleBasicWall(Vector2Int position)
     {
         paintSingleTile(wallTilemap,wallTop,position);

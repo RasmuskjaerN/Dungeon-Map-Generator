@@ -23,18 +23,20 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
 
     private void CorridorFirstGeneration()
     {
-        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();//creates a new room position determening the room position on the corridor
+        HashSet<Vector2Int> corridorPos = new HashSet<Vector2Int>();//creates a new room position determening the room position on the corridor
         HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>(); 
-        CreateCorridors(floorPositions, potentialRoomPos);
+        CreateCorridors(corridorPos, potentialRoomPos);
         
         HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPos); 
 
-        List<Vector2Int> deadEnds = findDeadEnds(floorPositions);
+        List<Vector2Int> deadEnds = findDeadEnds(corridorPos);
         CreateRoomsAtDeadEnds(deadEnds, roomPositions);
         
-        floorPositions.UnionWith(roomPositions); //unions the floor position hashset with the room position hashset
-        tilemapVisualizer.paintFloorTiles(floorPositions); //uses parameters to place tiles
-        WallGenerator.CreateWalls(floorPositions, tilemapVisualizer); //uses parameters to place walls
+        //corridorPos.UnionWith(roomPositions); //unions the floor position hashset with the room position hashset
+        tilemapVisualizer.paintCorridorTiles(corridorPos); //uses parameters to place tiles
+        tilemapVisualizer.paintRoomTiles(roomPositions);
+        //WallGenerator.CreateWalls(floorPositions, tilemapVisualizer); //uses parameters to place walls
+        DoorGenerator.CreateDoor(roomPositions, corridorPos, tilemapVisualizer);
 
     }
 
@@ -105,7 +107,7 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator
         HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
         CreateMine(floorPositions, potentialRoomPos);
 
-        tilemapVisualizer.paintFloorTiles(floorPositions);
+        tilemapVisualizer.paintCorridorTiles(floorPositions);
     }
 
     public void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)

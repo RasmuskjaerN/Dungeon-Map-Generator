@@ -19,7 +19,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator //inher
     {
         HashSet<Vector2Int> floorPos = runRandomWalk(randomWalkParameters, startPos);
         tilemapVisualizer.Clear();
-        tilemapVisualizer.paintFloorTiles(floorPos);
+        tilemapVisualizer.paintRoomTiles(floorPos);
         WallGenerator.CreateWalls(floorPos,tilemapVisualizer);
         //attempting to index the hashset.
         //List<Vector2Int> iFloor = new List<Vector2Int>();

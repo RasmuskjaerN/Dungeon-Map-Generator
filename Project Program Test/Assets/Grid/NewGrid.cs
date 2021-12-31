@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using static UnityEngine.UI.GridLayoutGroup;
 
 
-public class NewGrid : NewGridRandomWalk
+/*public class NewGrid : NewGridRandomWalk
 {
     
 
@@ -78,4 +78,4 @@ public class NewGrid : NewGridRandomWalk
 
 
 
-}
+}*/
