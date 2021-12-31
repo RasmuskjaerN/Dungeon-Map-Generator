@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inherites to use randomwalk on rooms.
 {
     [SerializeField]
-    private int mineCorridorLenghth = 14, mineCount = 5;
+    private int mineCount = 5;
     [SerializeField] //Base Parameters for generation.
     private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField]
@@ -21,7 +21,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     {
        
         CreateRooms();
-        //GenerateMine();
+        GenerateMine();
         
 
 
@@ -181,8 +181,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
         HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
         CreateMine(floorPositions, potentialRoomPos);
+        HashSet<Vector2Int> CavernPosition = new HashSet<Vector2Int>();
+        CreateCavern(CavernPosition);        
+
+
 
         tilemapVisualizer.paintCorridorTiles(floorPositions);
+        tilemapVisualizer.paintRoomTiles(CavernPosition);
+        
     }
 
     public void CreateMine(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPos)
@@ -195,7 +201,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         potentialRoomPos.Add(currentPosition);
         for (int i = 0; i < mineCount; i++)
         {
-            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, mineCorridorLenghth);
+            var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, randomWalkParameters.walkLength);
             currentPosition = corridor[corridor.Count - 1];
             potentialRoomPos.Add(currentPosition);
             floorPositions.UnionWith(corridor);
@@ -203,6 +209,17 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
 
     }
+
+    public void CreateCavern(HashSet<Vector2Int> floorPositions)
+    {
+        HashSet<Vector2Int> CavernPositions = new HashSet<Vector2Int>();
+        foreach (var position in floorPositions)
+        {
+            var CavernWalk = runRandomWalk(randomWalkParameters, position);
+            CavernPositions.UnionWith(CavernWalk);
+        }
+    }
+    
     public Vector2Int FindRandomEdge (HashSet<Vector2Int> floor)
     {
         var connection = true;
