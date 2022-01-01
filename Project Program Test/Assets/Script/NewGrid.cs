@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using static UnityEngine.UI.GridLayoutGroup;
 
 
-/*public class NewGrid : NewGridRandomWalk
+public class NewGrid : AbstractDungeonGenerator
 {
     
 
@@ -20,7 +20,7 @@ using static UnityEngine.UI.GridLayoutGroup;
         CreateGrid(startPos,dungeonWidth, dungeonHeight);
     }
 
-    private void runProceduralGeneration()
+    protected override void runProceduralGeneration()
     {
         CreateGrid(startPos,dungeonWidth, dungeonHeight);
     }
@@ -78,4 +78,4 @@ using static UnityEngine.UI.GridLayoutGroup;
 
 
 
-}*/
+}

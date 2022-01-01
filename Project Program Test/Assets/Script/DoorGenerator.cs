@@ -6,7 +6,7 @@ using UnityEngine;
 public class DoorGenerator
 {
 
-    //public GameObject door;
+    public GameObject door;
 
     
     public static void CreateDoor(HashSet<Vector2Int> roomPos,HashSet<Vector2Int> corridorPos,TilemapVisualizer tilemapVisualizer)

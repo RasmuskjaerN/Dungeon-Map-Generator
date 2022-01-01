@@ -8,8 +8,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
     private int mineCount = 5;
     [SerializeField] //Base Parameters for generation.
     private int minRoomWidth = 4, minRoomHeight = 4;
-    [SerializeField]
-    private int dungeonWidth = 20, dungeonHeight = 20; //the size of the entire space that is being split.
+    //[SerializeField]
+    //private int dungeonWidth = 20, dungeonHeight = 20; //the size of the entire space that is being split.
     [SerializeField]
     [Range(0,10)]
     private int offset = 1; //offset based from the bounds of each room. how far should the rooms be away from each other as a minimum.
@@ -19,12 +19,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
     protected override void runProceduralGeneration()
     {
-       
         CreateRooms();
         GenerateMine();
         
-
-
     }
 
     private void CreateRooms()
@@ -182,6 +179,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
         HashSet<Vector2Int> potentialRoomPos = new HashSet<Vector2Int>();
         CreateMine(floorPositions, potentialRoomPos);
         HashSet<Vector2Int> CavernPosition = new HashSet<Vector2Int>();
+        CavernPosition.UnionWith(floorPositions);
         CreateCavern(CavernPosition);        
 
 
@@ -212,11 +210,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inhe
 
     public void CreateCavern(HashSet<Vector2Int> floorPositions)
     {
-        HashSet<Vector2Int> CavernPositions = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> cavernPositions = new HashSet<Vector2Int>();
         foreach (var position in floorPositions)
         {
-            var CavernWalk = runRandomWalk(randomWalkParameters, position);
-            CavernPositions.UnionWith(CavernWalk);
+            var cavernWalk = runRandomWalk(randomWalkParameters, position);
+            cavernPositions.UnionWith(cavernWalk);
         }
     }
     
