@@ -20,7 +20,7 @@ public class DropDown : MonoBehaviour
 
     public void Start()
     {
-        rfdg = GameObject.Find("RoomsFirstGenerator").GetComponent<RoomFirstDungeonGenerator>();
+        rfdg = GameObject.Find("RoomFirstGenerator").GetComponent<RoomFirstDungeonGenerator>();
         srwdg = GameObject.Find("SimpleRandomWalkDungeonGenerator").GetComponent<SimpleRandomWalkDungeonGenerator>();
         cfdg = GameObject.Find("CorridorFirstDungeonGenerator").GetComponent<CorridorFirstDungeonGeneration>();
         
@@ -30,35 +30,35 @@ public class DropDown : MonoBehaviour
     
     public void HandleInputData(int val)
     {
-        if (val == 0)
+        if (val == 1)
         {
             rfdg.randomWalkParameters = bigDungeon;
             srwdg.randomWalkParameters = bigDungeon;
             cfdg.randomWalkParameters = bigDungeon;
         }
 
-        if (val == 1)
+        if (val == 2)
         {
             cfdg.randomWalkParameters = island;
             srwdg.randomWalkParameters = island;
             rfdg.randomWalkParameters = island;
         }
 
-        if (val == 2)
+        if (val == 3)
         {
             cfdg.randomWalkParameters = mediumDungeon;
             srwdg.randomWalkParameters = mediumDungeon;
             rfdg.randomWalkParameters = mediumDungeon;
         }
 
-        if (val == 3)
+        if (val == 4)
         {
             cfdg.randomWalkParameters = onlyCorridors;
             srwdg.randomWalkParameters = onlyCorridors;
             rfdg.randomWalkParameters = onlyCorridors;
         }
 
-        if (val == 4)
+        if (val == 5)
         {
             cfdg.randomWalkParameters = smallDungeon;
             srwdg.randomWalkParameters = smallDungeon;

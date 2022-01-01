@@ -239,7 +239,7 @@ MonoBehaviour:
   dungeonWidth: 20
   dungeonHeight: 10
   cellSize: 5
-  randomWalkParameters: {fileID: 11400000, guid: 2d98b41834dcbd94f880ac0a7123ab63, type: 2}
+  randomWalkParameters: {fileID: 0}
   mineCorridorLenghth: 14
   mineCount: 5
   corridorLenghth: 30
@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215, y: 510}
+  m_AnchoredPosition: {x: 194, y: 510}
   m_SizeDelta: {x: 272.75, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203184556
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.043137256, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3630,7 +3630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 517, y: 510}
+  m_AnchoredPosition: {x: 499, y: 510}
   m_SizeDelta: {x: 301.76, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358142665
@@ -3656,7 +3656,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.043137256, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3836,7 +3836,7 @@ MonoBehaviour:
   dungeonWidth: 20
   dungeonHeight: 10
   cellSize: 5
-  randomWalkParameters: {fileID: 11400000, guid: dffe3a10d3b822a4590e92842dbdb669, type: 2}
+  randomWalkParameters: {fileID: 0}
 --- !u!4 &383848891
 Transform:
   m_ObjectHideFlags: 0
@@ -3991,7 +3991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Big Dungeon
+  m_text: Select Dungeon Condition
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4130,7 +4130,7 @@ GameObject:
   - component: {fileID: 568497556}
   - component: {fileID: 568497557}
   m_Layer: 0
-  m_Name: RoomsFirstGenerator
+  m_Name: RoomFirstGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4167,7 +4167,7 @@ MonoBehaviour:
   dungeonWidth: 70
   dungeonHeight: 70
   cellSize: 5
-  randomWalkParameters: {fileID: 11400000, guid: 2d98b41834dcbd94f880ac0a7123ab63, type: 2}
+  randomWalkParameters: {fileID: 0}
   mineCount: 10
   minRoomWidth: 10
   minRoomHeight: 10
@@ -4956,7 +4956,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Generate Simple Random Dungeon
+  m_Text: 'Generate Simple Random Walk Dungeon
 
 
 '
@@ -12957,7 +12957,7 @@ GameObject:
   - component: {fileID: 1732161325}
   - component: {fileID: 1732161324}
   m_Layer: 5
-  m_Name: RoomsFirstGeneratorButton
+  m_Name: RoomFirstGeneratorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12980,8 +12980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825.46, y: 510}
-  m_SizeDelta: {x: 269.09, y: 60.004}
+  m_AnchoredPosition: {x: 812.2811, y: 510}
+  m_SizeDelta: {x: 295.652, y: 60.004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1732161324
 MonoBehaviour:
@@ -13006,7 +13006,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.043137256, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -13265,8 +13265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825.46, y: 435}
-  m_SizeDelta: {x: 269.08, y: 54.582}
+  m_AnchoredPosition: {x: 812.39996, y: 433}
+  m_SizeDelta: {x: 295.206, y: 64.215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009127005
 MonoBehaviour:
@@ -13291,8 +13291,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.043137256, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -13318,6 +13318,8 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
+    - m_Text: Select Dungeon Condition
+      m_Image: {fileID: 0}
     - m_Text: Big Dungeon
       m_Image: {fileID: 0}
     - m_Text: Island
@@ -13444,7 +13446,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.043137256, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
