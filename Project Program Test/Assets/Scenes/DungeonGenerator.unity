@@ -239,7 +239,7 @@ MonoBehaviour:
   dungeonWidth: 20
   dungeonHeight: 10
   cellSize: 5
-  randomWalkParameters: {fileID: 0}
+  randomWalkParameters: {fileID: 11400000, guid: dffe3a10d3b822a4590e92842dbdb669, type: 2}
   mineCorridorLenghth: 14
   mineCount: 5
   corridorLenghth: 30
@@ -3836,7 +3836,7 @@ MonoBehaviour:
   dungeonWidth: 20
   dungeonHeight: 10
   cellSize: 5
-  randomWalkParameters: {fileID: 0}
+  randomWalkParameters: {fileID: 11400000, guid: dffe3a10d3b822a4590e92842dbdb669, type: 2}
 --- !u!4 &383848891
 Transform:
   m_ObjectHideFlags: 0
@@ -4167,7 +4167,7 @@ MonoBehaviour:
   dungeonWidth: 70
   dungeonHeight: 70
   cellSize: 5
-  randomWalkParameters: {fileID: 0}
+  randomWalkParameters: {fileID: 11400000, guid: dffe3a10d3b822a4590e92842dbdb669, type: 2}
   mineCount: 10
   minRoomWidth: 10
   minRoomHeight: 10
