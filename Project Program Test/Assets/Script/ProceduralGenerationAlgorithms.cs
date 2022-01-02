@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------Credit to Sunny Valley Studio
+//--------------------------------https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v
+//--------------------------------This youtube tutorial was followed as it fit our vision for the program.
+//--------------------------------our own functionality and adaptation has been added by ourselves to fit our scope.
 public static class ProceduralGenerationAlgorithms 
 {
 
@@ -22,34 +26,6 @@ public static class ProceduralGenerationAlgorithms
 
         return path;
     }
-    /*public List<Vector2Int> CreateGrid(Vector2Int GridStartPos ,int gridWidth, int gridHeight)
-    {     
-        
-        List<Vector2Int> GridList = new List<Vector2Int>();
-        List<Vector2Int> GridPath = new List<Vector2Int>();
-
-        GridPath.Add(GridStartPos);
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
-            {
-                var nextGridPoint = new Vector2Int(x, y);
-                Debug.DrawLine(GetWorldPosition(x, y),GetWorldPosition(x,y + 1), Color.grey,1000f);
-                Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x+1, y), Color.grey,1000f);
-                Debug.Log("Lastest point "+nextGridPoint);
-                //Debug.Log("GridList Contains: " + GridList[x] + "Index: " +x);
-                
-            }
-
-            //var GridPath = Vector2Int(pathX + pathY);
-        }
-        
-
-        
-        return GridList;
-        
-    }
-    */
 
     public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPosition, int corridorLenghth)
     {

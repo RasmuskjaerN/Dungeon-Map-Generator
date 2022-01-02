@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+//--------------------------------Credit to Sunny Valley Studio
+//--------------------------------https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v
+//--------------------------------This youtube tutorial was followed as it fit our vision for the program.
+//--------------------------------our own functionality and adaptation has been added by ourselves to fit our scope.
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator //Inherites to use randomwalk on rooms.
 {
     [SerializeField]

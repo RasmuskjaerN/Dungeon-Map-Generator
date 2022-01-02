@@ -6,8 +6,10 @@ using CodeMonkey.Utils;
 using UnityEditor;
 using UnityEngine.UI;
 using static UnityEngine.UI.GridLayoutGroup;
-
-
+//----------------------------Credit to Code Monkey
+//----------------------------https://www.youtube.com/watch?v=waEsGu--9P8&t=721s
+//----------------------------Learned about this process from this tutorial.
+//----------------------------adaptations have been made.
 public class NewGrid : AbstractDungeonGenerator
 {
     
@@ -66,16 +68,4 @@ public class NewGrid : AbstractDungeonGenerator
         originPosition = new Vector3(startPos.x, startPos.y, 0);
         return new Vector3(x, y)*cellSize+originPosition;
     }
-
-    private void GetXY(Vector3 worldPosition, out int x, out int y)
-    {
-        x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
-        y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
-    }
-
-
-
-
-
-
 }

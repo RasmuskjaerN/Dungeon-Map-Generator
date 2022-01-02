@@ -11,10 +11,10 @@ public class DoorGenerator
     
     public static void CreateDoor(HashSet<Vector2Int> roomPos,HashSet<Vector2Int> corridorPos,TilemapVisualizer tilemapVisualizer)
     {
-        HashSet<Vector2Int> doorPos = FindDoorFromRoom(roomPos, corridorPos);;
+        HashSet<Vector2Int> doorPos = FindDoorFromRoom(roomPos, corridorPos);
         //FindDoorFromCorridor(doorPos, corridorPos);
 
-        HashSet<Vector2Int> corridorOpening = FindDoorFromCorridor(doorPos, corridorPos);;
+        HashSet<Vector2Int> corridorOpening = FindDoorFromCorridor(doorPos, corridorPos);
 
         foreach (var position in corridorOpening)
         {
